@@ -6,8 +6,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DogGo.Models;
+using DogGo.Repositories;
 
-namespace DogGo.Repositories
+namespace DogGo.Controllers
 {
     public class Program
     {

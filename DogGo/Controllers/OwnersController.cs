@@ -11,24 +11,30 @@ namespace DogGo.Controllers
 {
     public class OwnersController : Controller
     {
+        private readonly IOwnerRepository _ownerRepo;
+
+        public OwnersController(IOwnerRepository ownerRepository)
+        {
+            _ownerRepo = ownerRepository;
+        }
         // GET: OwnersController
         public ActionResult Index()
         {
             List<Owner> owners = _ownerRepo.GetAllOwners();
 
-            return View(walkers);
+            return View(owners);
         }
 
         // GET: OwnersController/Details/5
         public ActionResult Details(int id)
         {
-            Owner owners = _OownerRepo.GetWalkerById(id);
+            Owner owners = _ownerRepo.GetOwnerById(id);
             if (owners == null)
             {
                 return NotFound();
             }
 
-            return View(owner);
+            return View(owners);
         }
 
         // GET: OwnersController/Create

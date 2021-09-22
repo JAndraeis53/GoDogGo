@@ -33,14 +33,14 @@ namespace DogGo.Controllers
         // GET: Walkers/Details/5
         public ActionResult Details(int id)
         {
-            Walker walker = _walkerRepo.GetWalkerById(id);
+            Walker walkers = _walkerRepo.GetWalkerById(id);
 
-            if (walker == null)
+            if (walkers == null)
             {
                 return NotFound();
             }
 
-            return View(walker);
+            return View(walkers);
         }
 
 
